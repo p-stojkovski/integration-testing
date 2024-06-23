@@ -27,6 +27,8 @@ Types of integration testing:
 4. Assertion
 5. Cleanup
 
+### Commands
+dotnet dev-certs https -ep cert.pfx -p Test1234!
 ### Naming
 - Action_Return_When -> Get_ReturnsNotFound_WhenCustomerDoesNotExists
 
