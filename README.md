@@ -27,8 +27,6 @@ Types of integration testing:
 4. Assertion
 5. Cleanup
 
-### Commands
-dotnet dev-certs https -ep cert.pfx -p Test1234!
 ### Naming
 - Action_Return_When -> Get_ReturnsNotFound_WhenCustomerDoesNotExists
 
@@ -37,3 +35,6 @@ dotnet dev-certs https -ep cert.pfx -p Test1234!
 - When the test is disposed, the api is desposed alongside.
 - Test server in memory
 - test class inherit IClassFixture<WebApplicationFactory<IApiMarker>> -> every test in the class will reuse the same webApplicationFactory
+
+### Commands
+dotnet dev-certs https -ep cert.pfx -p Test1234!
