@@ -35,3 +35,6 @@ Types of integration testing:
 - When the test is disposed, the api is desposed alongside.
 - Test server in memory
 - test class inherit IClassFixture<WebApplicationFactory<IApiMarker>> -> every test in the class will reuse the same webApplicationFactory
+
+### Commands
+dotnet dev-certs https -ep cert.pfx -p Test1234!
