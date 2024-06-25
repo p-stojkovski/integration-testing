@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{424AD43E-B4D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.WebApp", "playwright\src\Customers.WebApp\Customers.WebApp.csproj", "{B5D4DA52-86BF-4A34-9FDA-5B672C84ED89}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4F4967B0-B308-4183-84AB-748395DBC49D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.WebApp.Tests.Integration", "playwright\tests\Customers.WebApp.Tests.Integration\Customers.WebApp.Tests.Integration.csproj", "{E69DCC5C-A116-4FCD-A17F-642E3DB2075A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{B5D4DA52-86BF-4A34-9FDA-5B672C84ED89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D4DA52-86BF-4A34-9FDA-5B672C84ED89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D4DA52-86BF-4A34-9FDA-5B672C84ED89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E69DCC5C-A116-4FCD-A17F-642E3DB2075A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E69DCC5C-A116-4FCD-A17F-642E3DB2075A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E69DCC5C-A116-4FCD-A17F-642E3DB2075A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E69DCC5C-A116-4FCD-A17F-642E3DB2075A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,8 @@ Global
 		{2A206595-0BFB-4501-98BD-126DE27CB098} = {0CBCB68F-1AD6-433E-9528-6CB0A062C71F}
 		{424AD43E-B4D4-4491-B5E7-6373DAAD4774} = {054C293D-B2B1-4855-9AC7-6424A008A009}
 		{B5D4DA52-86BF-4A34-9FDA-5B672C84ED89} = {424AD43E-B4D4-4491-B5E7-6373DAAD4774}
+		{4F4967B0-B308-4183-84AB-748395DBC49D} = {054C293D-B2B1-4855-9AC7-6424A008A009}
+		{E69DCC5C-A116-4FCD-A17F-642E3DB2075A} = {4F4967B0-B308-4183-84AB-748395DBC49D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68DAB0C5-B176-42D3-B863-57E2A0502468}
