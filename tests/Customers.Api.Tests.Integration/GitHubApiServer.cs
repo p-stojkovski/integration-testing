@@ -32,6 +32,21 @@ internal class GitHubApiServer : IDisposable
                 .WithStatusCode(200));
     }
 
+    public void SetupThrottledUser(string username)
+    {
+        _server
+            .Given(Request.Create()
+                .WithPath($"/users/{username}")
+                .UsingGet())
+            .RespondWith(Response.Create()
+                .WithBody(@"
+                    ""message"": ""API rate limit exceeded for 127.0.0.1"",
+                    ""documentation_url"": ""https://docs.github.com/rest/overview""
+                ")
+                .WithHeader("content-type", "application/json; charset=utf-8")
+                .WithStatusCode(403));
+    }
+
     public void Dispose()
     {
         _server.Stop();
