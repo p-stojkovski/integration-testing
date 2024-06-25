@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Net.Http.Headers;
 using Testcontainers.PostgreSql;
@@ -35,6 +36,9 @@ public class CustomerApiFactory : WebApplicationFactory<IApiMarker>, IAsyncLifet
 
         builder.ConfigureTestServices(services =>
         {
+            //For removing backgound tasks that could interfere the tests if you don't need them
+            services.RemoveAll(typeof(IHostedService));
+
             services.RemoveAll(typeof(IDbConnectionFactory));
             services.AddSingleton<IDbConnectionFactory>(_ => 
                 new NpgsqlConnectionFactory(_dbContainer.GetConnectionString()));
