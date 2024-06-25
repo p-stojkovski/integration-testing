@@ -4,6 +4,7 @@ using DotNet.Testcontainers.Builders;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
@@ -51,6 +52,11 @@ public class CustomerApiFactory : WebApplicationFactory<IApiMarker>, IAsyncLifet
                 httpClient.DefaultRequestHeaders.Add(
                     HeaderNames.UserAgent, $"Course-{Environment.MachineName}");
             });
+
+            //Example for inital setup of EF Core
+            services.RemoveAll(typeof(DbContext));
+            services.AddDbContext<AppDbContext>(optionsBuilder 
+                => optionsBuilder.UseNpgsql(_dbContainer.GetConnectionString()));
         });
     }
 
@@ -69,6 +75,11 @@ public class CustomerApiFactory : WebApplicationFactory<IApiMarker>, IAsyncLifet
 
         _gitHubApiServer.Dispose();
     }
+}
+
+public class AppDbContext : DbContext
+{
+
 }
 
 //private readonly PostgreSqlContainer _dbContainer =
