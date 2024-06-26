@@ -8,7 +8,7 @@ namespace Customers.WebApp.Tests.Integration;
 
 public class SharedTestContext : IAsyncLifetime
 {
-    public const string ValidGiHubUsername = "validUser";
+    public const string ValidGitHubUsername = "validUser";
     public const string AppUrl = "https://localhost:7780";
 
     public GitHubApiServer GitHubApiServer { get; } = new();
@@ -31,7 +31,7 @@ public class SharedTestContext : IAsyncLifetime
     public async Task InitializeAsync()
     {
         GitHubApiServer.Start();
-        GitHubApiServer.SetupUser(ValidGiHubUsername);
+        GitHubApiServer.SetupUser(ValidGitHubUsername);
 
         _dockerService.Start();
 
